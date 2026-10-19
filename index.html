@@ -9,8 +9,8 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300F0FF'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
   
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
 
@@ -142,7 +142,7 @@
       <!-- Right Visual Showcase -->
       <div class="hero-visual">
         <div class="hero-card-glow">
-          <img src="assets/images/combos/combo-phong-khach.jpg" alt="Không gian sống thông minh SmartZen">
+          <img src="combo-phong-khach.jpg" alt="Không gian sống thông minh SmartZen">
           <!-- Floating Status Widget Left -->
           <div class="hero-floating-stat stat-left">
             <div class="stat-icon">
@@ -597,7 +597,7 @@
           <div class="bot-avatar-pulse" style="width: 32px; height: 32px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2">
               <rect x="3" y="8" width="18" height="12" rx="4"></rect>
-              <circle cx="9" cy="14" r="1.5" fill="#00F0FF"></circle>
+              <circle cx="9" cy="14'" r="1.5" fill="#00F0FF"></circle>
               <circle cx="15" cy="14" r="1.5" fill="#00F0FF"></circle>
             </svg>
           </div>
@@ -812,161 +812,4 @@
         <div>👤 <strong>Khách hàng:</strong> <span id="successCustomerName" style="color: #FFF;"></span></div>
         <div>📞 <strong>Số điện thoại:</strong> <span id="successPhone" style="color: #FFF;"></span></div>
         <div>📍 <strong>Địa chỉ giao:</strong> <span id="successAddress" style="color: #FFF;"></span></div>
-        <div>💳 <strong>Phương thức:</strong> <span id="successMethod" style="color: var(--cyan-neon);"></span></div>
-        <div>💰 <strong>Tổng thanh toán:</strong> <span id="successAmount" style="color: var(--cyan-neon); font-weight: 800; font-family: var(--font-tech); font-size: 1.1rem;"></span></div>
-      </div>
-
-      <div style="display: flex; gap: 1rem;">
-        <button class="btn btn-secondary" onclick="window.print()" style="flex: 1;">
-          🖨️ In Hóa Đơn
-        </button>
-        <button class="btn btn-primary" onclick="closeSuccessModal()" style="flex: 1;">
-          Tiếp Tục Mua Sắm
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Product Quick View Modal -->
-  <div class="modal-overlay" id="productQuickViewModal">
-    <div class="modal-content-box" style="max-width: 860px;">
-      <button class="modal-close-btn" id="qvModalClose">✕</button>
-
-      <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 2.2rem; align-items: start;">
-        <!-- Product Image Showcase -->
-        <div style="background: #0D1322; border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(0,240,255,0.2);">
-          <img id="qvProductImg" src="" alt="Sản phẩm" style="width: 100%; height: 360px; object-fit: cover;">
-          <div style="padding: 0.8rem; display: flex; align-items: center; justify-content: space-around; font-size: 0.75rem; color: var(--text-secondary); border-top: 1px solid rgba(255,255,255,0.06);">
-            <span>🛡️ Bảo hành 24T</span>
-            <span>⚡ Hỗ trợ Matter</span>
-            <span>🚚 Giao 2H</span>
-          </div>
-        </div>
-
-        <!-- Product Details -->
-        <div>
-          <span class="badge-tag" id="qvProductCategory" style="margin-bottom: 0.5rem;"></span>
-          <h3 id="qvProductTitle" style="font-size: 1.35rem; color: #FFF; margin-bottom: 0.6rem; line-height: 1.3;"></h3>
-
-          <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; font-size: 0.85rem;">
-            <span style="color: #FBBF24; font-weight: 700;" id="qvProductRating">★ 5.0</span>
-            <span style="color: var(--text-muted);" id="qvProductReviews"></span>
-          </div>
-
-          <div style="display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 1.2rem;">
-            <span id="qvProductPrice" style="font-size: 1.6rem; font-weight: 800; color: var(--cyan-neon); font-family: var(--font-tech);"></span>
-            <span id="qvProductOriginalPrice" style="font-size: 0.95rem; color: var(--text-muted); text-decoration: line-through;"></span>
-          </div>
-
-          <p id="qvProductDesc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.2rem;"></p>
-
-          <!-- Key Features -->
-          <div style="margin-bottom: 1.2rem;">
-            <div style="font-size: 0.8rem; font-weight: 700; color: #FFF; text-transform: uppercase; margin-bottom: 0.4rem;">Đặc tính công nghệ:</div>
-            <ul id="qvProductFeatures" style="list-style: none;"></ul>
-          </div>
-
-          <!-- Specs Table -->
-          <div style="margin-bottom: 1.5rem;">
-            <div style="font-size: 0.8rem; font-weight: 700; color: #FFF; text-transform: uppercase; margin-bottom: 0.4rem;">Thông số kỹ thuật:</div>
-            <table style="width: 100%; border-collapse: collapse;">
-              <tbody id="qvProductSpecs"></tbody>
-            </table>
-          </div>
-
-          <!-- Add to Cart Action -->
-          <div style="display: flex; gap: 0.8rem; align-items: center; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);">
-            <div class="cart-qty-picker" style="margin-top: 0;">
-              <input type="number" id="qvQtyInput" value="1" min="1" max="10" style="width: 50px; background: var(--bg-input); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; color: #FFF; text-align: center; padding: 0.4rem; font-weight: 700;">
-            </div>
-            <button class="btn btn-primary" id="qvAddToCartBtn" style="flex: 1;">
-              🛒 Thêm Vào Giỏ Hàng
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Combo Detail Modal -->
-  <div class="modal-overlay" id="comboDetailModal">
-    <div class="modal-content-box" style="max-width: 760px;">
-      <button class="modal-close-btn" onclick="closeComboModal()">✕</button>
-
-      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 2rem;">
-        <div>
-          <img id="comboModalImg" src="" alt="Combo" style="width: 100%; height: 260px; object-fit: cover; border-radius: var(--radius-md); border: 1px solid rgba(0,240,255,0.3);">
-          <div style="margin-top: 1.2rem; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--status-success); border-radius: var(--radius-sm); padding: 0.8rem; text-align: center;">
-            <span id="comboModalSavings" style="color: var(--status-success); font-weight: 700; font-size: 0.9rem;"></span>
-          </div>
-        </div>
-
-        <div>
-          <span class="badge-tag pulse" id="comboModalBadge" style="margin-bottom: 0.5rem;"></span>
-          <h3 id="comboModalTitle" style="font-size: 1.4rem; color: #FFF; margin-bottom: 0.3rem;"></h3>
-          <div id="comboModalSubtitle" style="font-size: 0.85rem; color: var(--cyan-neon); margin-bottom: 0.8rem;"></div>
-          <p id="comboModalDesc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.2rem;"></p>
-
-          <div style="margin-bottom: 1rem;">
-            <div style="font-size: 0.8rem; font-weight: 700; color: #FFF; text-transform: uppercase; margin-bottom: 0.4rem;">Trọn bộ thiết bị đi kèm:</div>
-            <ul id="comboModalItems" style="list-style: none;"></ul>
-          </div>
-
-          <div style="margin-bottom: 1.5rem;">
-            <div style="font-size: 0.8rem; font-weight: 700; color: #FFF; text-transform: uppercase; margin-bottom: 0.4rem;">Đặc quyền đi kèm:</div>
-            <ul id="comboModalPerks" style="list-style: none;"></ul>
-          </div>
-
-          <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);">
-            <div>
-              <div id="comboModalPrice" style="font-size: 1.5rem; font-weight: 800; color: var(--cyan-neon); font-family: var(--font-tech);"></div>
-              <div id="comboModalOriginalPrice" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;"></div>
-            </div>
-            <button class="btn btn-primary" id="comboModalBuyBtn">
-              🛒 Thêm Trọn Bộ Vào Giỏ
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Survey Booking Success Modal -->
-  <div class="modal-overlay" id="surveySuccessModal">
-    <div class="modal-content-box" style="max-width: 560px; text-align: center;">
-      <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(0, 240, 255, 0.15); border: 2px solid var(--cyan-neon); color: var(--cyan-neon); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.2rem;">
-        📐
-      </div>
-      <span class="badge-tag pulse" style="margin-bottom: 0.5rem;">ĐẶT LỊCH THÀNH CÔNG</span>
-      <h3 style="font-size: 1.55rem; color: #FFF; margin: 0.5rem 0;">SmartZen Đã Tiếp Nhận Lịch Hẹn!</h3>
-      <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.4rem;">
-        Mã phiếu khảo sát: <strong id="surveyTicketCode" style="color: var(--cyan-neon); font-size: 1.15rem; font-family: var(--font-tech);">SRV-2026-0000</strong>
-      </p>
-
-      <div style="background: rgba(7, 10, 18, 0.8); border: 1px solid rgba(0,240,255,0.25); border-radius: var(--radius-md); padding: 1.2rem; text-align: left; font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;">
-        <div>👤 <strong>Khách hàng:</strong> <span id="surveyConfirmName" style="color: #FFF;"></span></div>
-        <div>📞 <strong>Số điện thoại:</strong> <span id="surveyConfirmPhone" style="color: #FFF;"></span></div>
-        <div>📍 <strong>Địa chỉ:</strong> <span id="surveyConfirmAddress" style="color: #FFF;"></span></div>
-        <div>⏰ <strong>Thời gian hẹn:</strong> <span id="surveyConfirmDateTime" style="color: var(--cyan-neon);"></span></div>
-        <div>🏠 <strong>Loại hình:</strong> <span id="surveyConfirmType" style="color: #FFF;"></span></div>
-      </div>
-
-      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-        Kỹ sư trưởng khu vực sẽ gọi điện cho quý khách trước 30 phút khi đến nơi.
-      </p>
-
-      <button class="btn btn-primary" onclick="SurveyController.closeModal()" style="width: 100%;">
-        Đồng Ý & Đóng
-      </button>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="js/products-data.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/catalog.js"></script>
-  <script src="js/dify-chatbot.js"></script>
-  <script src="js/survey.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+        <div>💳 <strong>Phương thức:</strong> <span id="successMethod" style="color: var(--cyan-neon);
